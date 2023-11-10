@@ -18,7 +18,7 @@ with open("input_text.txt", "r", encoding="utf-8") as f:
 def text_to_speech(text):
     response = client.audio.speech.create(
     model="tts-1",
-    voice="nova",
+    voice="alloy", #variation: "alloy", "echo", "fable", "onyx", "nova", "shimmer"
     input=text,
     )
     response.stream_to_file(f"output/output_openai_{tstamp}.mp3")
